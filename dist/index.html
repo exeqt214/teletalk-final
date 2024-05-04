@@ -1,0 +1,671 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="icon" href="../images/logo/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <title>TeleTalk</title>
+</head>
+
+<body class="bg-black">
+    <style>
+        .flex-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes custom-bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .animate-custom-bounce {
+            animation: custom-bounce 2s linear infinite;
+        }
+    </style>
+
+    <header>
+        <nav class="bg-white border-gray-200 dark:bg-black">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="../images/logo/logo.png" class="h-8" alt="" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">TeleTalk</span>
+                </a>
+
+                <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+                    <button type="button" class="flex text-sm" id="user-menu-button" aria-expanded="false"
+                        data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-6  h-6 mr-4 rounded-full" src="../images/profile/qwe.jpg" alt="user photo">
+                    </button>
+
+                    <button type="button" class="flex text-sm" id="user-menu-button" aria-expanded="false"
+                        data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-6  h-6" src="../images/icon/cart.png" alt="user photo">
+                    </button>
+
+                    <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                        id="user-dropdown">
+                        <div class="px-4 py-3">
+                            <span class="block text-sm text-gray-900 dark:text-white">Ara Baguinon</span>
+                            <span
+                                class="block text-sm  text-gray-500 truncate dark:text-gray-400">arabaguinon@gmail.com</span>
+                        </div>
+                        <ul class="py-2" aria-labelledby="user-menu-button">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                    out</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button data-collapse-toggle="navbar-user" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-user" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+                    <ul
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-black text-xs">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 md:dark:text-purple-500"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="iPhones.html"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Phones</a>
+                        </li>
+                        <li>
+                            <a href="accessories.html"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Accessories</a>
+                        </li>
+
+                        <li>
+                            <a href="support.html"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Supports</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="bg-white dark:bg-black">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mb-9">
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex animate-custom-bounce">
+                <img src="../images/hero/hero.png" alt="mockup">
+            </div>
+            <div class="mr-auto place-self-center lg:col-span-7 mx-12">
+                <div
+                    class="mb-4 text-white bg-gradient-to-r from-purple-400 to-purple-900 inline-block px-4 py-1 rounded-lg">
+                    20% off sale</div>
+                <h1
+                    class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                    Experience the future, <br>now in your palm</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                    Discover the latest in innovation and style at the <span class="text-purple-500 font-bold"
+                        style="background-image: linear-gradient(to right, rgba(197,12,209,1), rgba(128,0,255,1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">TeleTalk</span>.
+                    From cutting-edge technology to
+                    sleek design, find your perfect match and embark on a journey of endless possibilities.</p>
+                <a href="#"
+                    class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                    Get started
+                    <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#"
+                    class="animate-pulse inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    Speak to Sales
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+       
+
+        <hr class="border-gray-300 dark:border-gray-700">
+    </section>
+
+    <section class="bg-white dark:bg-black">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="bg-black dark:bg-black text-center">
+                        <h5 class="text-white font-regular tracking-tight text-xl md:text-2xl my-16">
+                            Enhance your <span class="text-purple-500 font-bold"
+                                style="background-image: linear-gradient(to right, rgba(197,12,209,1), rgba(128,0,255,1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">iPhone</span>
+                            experience
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="flex-container flex overflow-x-auto mt-5">
+
+            <section class="bg-black dark:bg-black mx-4">
+                <div
+                    class="relative mx-4 sm:mx-8 md:mx-16 lg:mx-20 xl:mx-24 w-full max-w-xs overflow-hidden rounded-lg bg-purple-500 bg-opacity-10 shadow-md">
+                    <a href="../pages/iPhone_SE.html">
+                        <img class="h-90 sm:h-80 md:h-96 lg:h-80 xl:h-90 rounded-t-lg object-cover"
+                            src="../images/phones/iphone_SE.jpg" alt="product image" />
+                    </a>
+                    <span
+                        class="absolute top-0 left-0 w-28 sm:w-20 md:w-24 lg:w-28 xl:w-32 translate-y-4 -translate-x-6 -rotate-45 bg-gradient-to-r from-purple-600 to-purple-950 text-center text-sm text-white">Sale</span>
+
+                    <div class="mt-4 px-4 sm:px-5 pb-5">
+                        <a href="#">
+                            <h5
+                                class="text-xl sm:text-lg md:text-xl lg:text-lg xl:text-xl font-semibold tracking-tight text-white">
+                                iPhone SE</h5>
+                        </a>
+                        <div class="mt-2.5 mb-5 flex items-center">
+                            <span class="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p>
+                                <span
+                                    class="text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold text-white">₱30,990</span>
+                                <span class="text-sm text-white line-through">₱31,990</span>
+                            </p>
+                            <a href="#"
+                                class="flex items-center rounded-md bg-black px-5 py-2.5 text-center text-sm sm:text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-black dark:bg-black mx-4">
+                <div
+                class="relative mx-4 sm:mx-8 md:mx-16 lg:mx-20 xl:mx-24 w-full max-w-xs overflow-hidden rounded-lg bg-purple-500 bg-opacity-10 shadow-md">
+                    <a href="../pages/iPhone_11.html">
+                        <img class="h-90 sm:h-80 md:h-96 lg:h-80 xl:h-90 rounded-t-lg object-cover"
+                            src="../images/phones/iphone_11.jpg" alt="product image" />
+                    </a>
+                    <span
+                        class="absolute top-0 left-0 w-28 sm:w-20 md:w-24 lg:w-28 xl:w-32 translate-y-4 -translate-x-6 -rotate-45 bg-gradient-to-r from-purple-600 to-purple-950 text-center text-sm text-white">Sale</span>
+                    <div class="mt-4 px-4 sm:px-5 pb-5">
+                        <a href="#">
+                            <h5
+                                class="text-xl sm:text-lg md:text-xl lg:text-lg xl:text-xl font-semibold tracking-tight text-white">
+                                iPhone 11</h5>
+                        </a>
+                        <div class="mt-2.5 mb-5 flex items-center">
+                            <span class="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">3.0</span>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p>
+                                <span
+                                    class="text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold text-white">₱19,990</span>
+                                <span class="text-sm text-white line-through">₱30,990</span>
+                            </p>
+                            <a href="#"
+                                class="flex items-center rounded-md bg-black px-5 py-2.5 text-center text-sm sm:text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-black dark:bg-black mx-4">
+                <div
+                    class="relative mx-4 sm:mx-8 md:mx-16 lg:mx-20 xl:mx-24 w-full max-w-xs overflow-hidden rounded-lg bg-purple-500 bg-opacity-10 shadow-md">
+                    <a href="../pages/iPhone_12.html">
+                        <img class="h-90 sm:h-80 md:h-96 lg:h-80 xl:h-90 rounded-t-lg object-cover"
+                            src="../images/phones/iphone_12.jpg" alt="product image" />
+                    </a>
+                    <span
+                        class="absolute top-0 left-0 w-28 sm:w-20 md:w-24 lg:w-28 xl:w-32 translate-y-4 -translate-x-6 -rotate-45 bg-gradient-to-r from-purple-600 to-purple-950 text-center text-sm text-white">Sale</span>
+                    <div class="mt-4 px-4 sm:px-5 pb-5">
+                        <a href="#">
+                            <h5
+                                class="text-xl sm:text-lg md:text-xl lg:text-lg xl:text-xl font-semibold tracking-tight text-white">
+                                iPhone 12</h5>
+                        </a>
+                        <div class="mt-2.5 mb-5 flex items-center">
+                            <span class="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">4.0</span>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p>
+                                <span
+                                    class="text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold text-white">₱27,990</span>
+                                <span class="text-sm text-white line-through">₱40,990</span>
+                            </p>
+                            <a href="#"
+                                class="flex items-center rounded-md bg-black px-5 py-2.5 text-center text-sm sm:text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-black dark:bg-black mx-4">
+                <div
+                    class="relative mx-4 sm:mx-8 md:mx-16 lg:mx-20 xl:mx-24 w-full max-w-xs overflow-hidden rounded-lg bg-purple-500 bg-opacity-10 shadow-md">
+                    <a href="#">
+                        <img class="h-90 sm:h-80 md:h-96 lg:h-80 xl:h-90 rounded-t-lg object-cover"
+                            src="../images/phones/iphone_13.jpg" alt="product image" />
+                    </a>
+                    <span
+                        class="absolute top-0 left-0 w-28 sm:w-20 md:w-24 lg:w-28 xl:w-32 translate-y-4 -translate-x-6 -rotate-45 bg-gradient-to-r from-purple-600 to-purple-950 text-center text-sm text-white">Sale</span>
+                    <div class="mt-4 px-4 sm:px-5 pb-5">
+                        <a href="#">
+                            <h5
+                                class="text-xl sm:text-lg md:text-xl lg:text-lg xl:text-xl font-semibold tracking-tight text-white">
+                                iPhone 13</h5>
+                        </a>
+                        <div class="mt-2.5 mb-5 flex items-center">
+                            <span class="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                            <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p>
+                                <span
+                                    class="text-3xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold text-white">₱33,490</span>
+                                <span class="text-sm text-white line-through">₱45,490</span>
+                            </p>
+                            <a href="#"
+                                class="flex items-center rounded-md bg-black px-5 py-2.5 text-center text-sm sm:text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-700 my-16">
+    </section>
+
+    <section class="bg-white dark:bg-black">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h5 class="text-white font-regular tracking-tight text-xl md:text-2xl mb-12">
+                    Don't miss out on ongoing
+                    <span class="text-purple-500 font-bold"
+                        style="background-image: linear-gradient(to right, rgba(197,12,209,1), rgba(128,0,255,1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">offers</span>
+                </h5>
+            </div>
+            <div class="flex flex-wrap justify-center items-center">
+                <a href="#"
+                    class="mx-5 md:mx-10 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-md lg:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5 md:mb-0">
+                    <img class="object-cover w-full rounded-t-lg h-72 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                        src="../images/offers/trade-in.png" alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Trade-In Deal</h5>
+                        <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">Trade in your
+                            old iPhone and get a
+                            discount on your new purchase. We'll evaluate the value of your old device and offer you a
+                            competitive price towards your upgrade.</p>
+                    </div>
+                </a>
+                <a href="#"
+                    class="mx-5 md:mx-10 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-md lg:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <img class="object-cover w-full rounded-t-lg h-72 md:h-auto md:w-48 md:rounded-none md:rounded-r-lg"
+                        src="../images/offers/bundle.png" alt="">
+                    <div class="flex flex-col justify-between p-4 leading-normal">
+                        <h5 class="mb-2 text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            Bundle Discounts</h5>
+                        <p class="mb-3 text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">Purchase an
+                            iPhone along with
+                            accessories such as cases, chargers, or AirPods, and enjoy a special bundle discount.
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-700 my-16">
+    </section>
+
+
+    <section class="bg-white dark:bg-black mt-20">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="bg-black dark:bg-black text-center">
+                        <h5 class="text-white font-regular tracking-tight text-xl md:text-2xl mb-12">
+                            Empower your <span class="text-purple-500 font-bold"
+                                style="background-image: linear-gradient(to right, rgba(197,12,209,1), rgba(128,0,255,1)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">iPhone</span>
+                            experience
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overflow-container">
+            <div class="flex justify-center items-center flex-wrap">
+                <a href="accessories.html"
+                    class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 bg-slate-400 bg-opacity-10 m-7 flex h-32 rounded-lg overflow-hidden hover:bg-opacity-20 transition duration-300">
+                    <div class="w-1/2 flex justify-center items-center">
+                        <img src="../images/accessories/case.png" class="w-24" alt="">
+                    </div>
+                    <div class="w-1/2 flex justify-start items-center">
+                        <h2 class="text-white font-bold">iPhone Case<span class="text-sm font-light"><br>Explore our
+                                iPhone cases.</span></h2>
+                    </div>
+                </a>
+
+                <a href="accessories.html"
+                    class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 bg-slate-400 bg-opacity-10 m-7 flex h-32 rounded-lg overflow-hidden hover:bg-opacity-20 transition duration-300">
+                    <div class="w-1/2 flex justify-center items-center">
+                        <img src="../images/accessories/airpods.png" class="w-24" alt="">
+                    </div>
+                    <div class="w-1/2 flex justify-start items-center">
+                        <h2 class="text-white font-bold">AirPods<span class="text-sm font-light"><br>Explore our
+                                AirPods.</span></h2>
+                    </div>
+                </a>
+
+                <a href="accessories.html"
+                    class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 bg-slate-400 bg-opacity-10 m-7 flex h-32 rounded-lg overflow-hidden hover:bg-opacity-20 transition duration-300">
+                    <div class="w-1/2 flex justify-center items-center">
+                        <img src="../images/accessories/charger.png" class="w-24" alt="">
+                    </div>
+                    <div class="w-1/2 flex justify-start items-center">
+                        <h2 class="text-white font-bold">iPhone Charger<span class="text-sm font-light"><br>Explore our
+                                chargers.</span></h2>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <hr class="border-gray-300 dark:border-gray-700 my-16">
+    </section>
+
+    <section class="bg-white dark:bg-black">
+        <div
+            class="w-full p-4 text-center bg-black border border-black shadow sm:p-8 dark:bg-black dark:border-black my-14">
+            <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Your Pocket-Sized Shopping Companion!</h5>
+            <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Get instant notifications on new
+                promotions by downloading the TeleTalk app.</p>
+            <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                <a href="#"
+                    class="w-full sm:w-auto bg-blue-800 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-700">
+                    <svg class="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <path fill="currentColor"
+                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                        </path>
+                    </svg>
+                    <div class="text-left rtl:text-right">
+                        <div class="mb-1 text-xs">Download on the</div>
+                        <div class="-mt-1 font-sans text-sm font-semibold">Mac App Store</div>
+                    </div>
+                </a>
+                <a href="#"
+                    class="w-full sm:w-auto bg-green-800 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-green-600 dark:hover:bg-green-800 dark:focus:ring-green-700">
+                    <svg class="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab"
+                        data-icon="google-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                        </path>
+                    </svg>
+                    <div class="text-left rtl:text-right">
+                        <div class="mb-1 text-xs">Get in on</div>
+                        <div class="-mt-1 font-sans text-sm font-semibold">Google Play</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="p-4 bg-white sm:p-6 dark:bg-gray-950">
+        <div class="mx-auto max-w-screen-xl">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="../images/logo/logo.png" class="mr-3 h-8" alt="" />
+                        <span
+                            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">TeleTalk</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="" class="hover:underline">TeleTalk</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline">Apple</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="" class="hover:underline ">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="" class="hover:underline">Instagram</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-purple-900 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a
+                        href="" class="hover:underline">TeleTalk™</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
